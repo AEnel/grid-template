@@ -3,116 +3,166 @@
 	&__container {
 		display: grid;
 		grid-gap: 10px;
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-areas:
-			"a1 a1 a2 a3"
-			"a4 a5 a5 a6"
-			"a7 a8 a9 a6";
-	}
-}
+		@include lg-min {
+			grid-gap: $gap / 2;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas:
+				"a1 a1 a2 a3"
+				"a4 a5 a5 a6"
+				"a7 a8 a9 a6";
+		}
 
-.skill-item {
-	position: relative;
-	min-height: calc(33vh - 10.5px);
-	background-color: $color-main;
-	overflow: hidden;
-
-	&:nth-of-type(1) {
-		grid-area: a1;
+		@include lg-md {
+			grid-gap: $gap / 2;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"a1 a1 a2"
+				"a3 a4 a4"
+				"a5 a5 a6"
+				"a7 a8 a6"
+				"a7 a9 a9";
+		}
+		@include md-sm {
+			grid-gap: $gap / 2;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas:
+				"a1 a2"
+				"a3 a2"
+				"a4 a4"
+				"a5 a6"
+				"a5 a7"
+				"a8 a9";
+		}
+		@include sm {
+			grid-gap: $gap;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"a1"
+				"a2"
+				"a3"
+				"a4"
+				"a5"
+				"a6"
+				"a7"
+				"a8"
+				"a9";
+		}
 	}
 
-	&:nth-of-type(2) {
-		grid-area: a2;
-	}
-
-	&:nth-of-type(3) {
-		grid-area: a3;
-	}
-
-	&:nth-of-type(4) {
-		grid-area: a4;
-	}
-
-	&:nth-of-type(5) {
-		grid-area: a5;
-	}
-
-	&:nth-of-type(6) {
-		grid-area: a6;
-	}
-
-	&:nth-of-type(7) {
-		grid-area: a7;
-	}
-
-	&:nth-of-type(8) {
-		grid-area: a8;
-	}
-
-	&:nth-of-type(9) {
-		grid-area: a9;
-	}
-	&__overlay {
-		@include abs-position;
+	.skill-item {
+		position: relative;
+		min-height: calc(33vh - 10.5px);
 		background-color: $color-main;
-		opacity: 0.8;
-		z-index: 1;
-		transition: opacity 0.5s;
+		overflow: hidden;
+
+		&:nth-of-type(1) {
+			grid-area: a1;
+		}
+
+		&:nth-of-type(2) {
+			grid-area: a2;
+		}
+
+		&:nth-of-type(3) {
+			grid-area: a3;
+		}
+
+		&:nth-of-type(4) {
+			grid-area: a4;
+		}
+
+		&:nth-of-type(5) {
+			grid-area: a5;
+		}
+
+		&:nth-of-type(6) {
+			grid-area: a6;
+		}
+
+		&:nth-of-type(7) {
+			grid-area: a7;
+		}
+
+		&:nth-of-type(8) {
+			grid-area: a8;
+		}
+
+		&:nth-of-type(9) {
+			grid-area: a9;
+		}
+		&__overlay {
+			@include abs-position;
+			background-color: $color-main;
+			opacity: 0.8;
+			z-index: 1;
+			transition: opacity 0.5s;
+		}
+
+		&__image {
+			@include abs-position;
+			background-size: cover;
+			background-position: 50% 50%;
+			transition: transform 0.5s;
+		}
+
+		&__title {
+			@include abs-position;
+			margin: 0;
+			z-index: 2;
+		}
+
+		&__link {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			transition: color 0.5s;
+		}
+
+		&:hover {
+			.skill-item__overlay {
+				opacity: 0.95 !important;
+			}
+			.skill-item__image {
+				transform: scale(1.1);
+			}
+
+			.skill-item__link {
+				color: $color-accent;
+			}
+		}
 	}
 
-	&__image {
-		@include abs-position;
-		background-size: cover;
-		background-position: 50% 50%;
-		transition: transform 0.5s;
-	}
-
-	&__title {
-		@include abs-position;
-		margin: 0;
-		z-index: 2;
-	}
-
-	&__link {
-		display: flex;
-		width: 100%;
-		height: 100%;
+	.skills-button {
+		display: grid;
 		justify-content: center;
-		align-items: center;
-		transition: color 0.5s;
 	}
 
-	&:hover {
-		.skill-item__overlay {
-			opacity: 0.95 !important;
-		}
-		.skill-item__image {
-			transform: scale(1.1);
+	.skills-button__view {
+		text-align: center;
+		display: block;
+		// height: 47px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: $gap;
+		font-size: 1.125rem;
+		letter-spacing: 0.12em;
+		transition: background-color 0.5s;
+		// width: 280px;
+		border: 2px solid $color-gray-dark;
+		background-color: $color-main;
+		@include sm-min {
+			height: 60px;
+			width: 100%;
 		}
 
-		.skill-item__link {
-			color: $color-accent;
+		@include sm {
+			min-width: 465px;
 		}
 	}
-}
 
-.skills-button {
-	display: grid;
-	justify-content: center;
-	align-content: center;
-}
-
-.skills-button__view {
-	height: 60px;
-	margin-top: 15px;
-	padding: 18px $gap;
-	font-size: 1.125rem;
-	transition: background-color 0.5s;
-	max-width: 250px;
-	border: 1px solid $color-gray-dark;
-	background-color: $color-main;
-}
-
-.skills-button__view:hover {
-	background-color: $color-accent;
+	.skills-button__view:hover {
+		background-color: $color-accent;
+	}
 }

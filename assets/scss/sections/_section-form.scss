@@ -1,0 +1,79 @@
+.section-form {
+	padding: $gap 0;
+	background-color: $color-main;
+	display: grid;
+
+	&__container {
+		display: grid;
+		grid-gap: $gap;
+		width: 88%;
+
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: $gap;
+		padding-left: $gap;
+
+		@include lg-min {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include lg-md {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include md-sm {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.form-item {
+		&:nth-of-type(1) {
+			@include md-sm {
+				grid-column: 1 / span 2;
+			}
+		}
+		&__input {
+			font-size: 1.125rem;
+			letter-spacing: 0.1em;
+
+			display: block;
+			height: 60px;
+			width: 100%;
+			padding: 0 $gap 0 $gap;
+			transition: background-color 0.5s, border-bottom-color 0.5s;
+			color: $color-light;
+			background-color: $color-gray-dark;
+			border: 2px solid rgba($color-light, 0);
+			border-bottom-color: rgba($color-light, 0.4);
+
+			&::placeholder {
+				color: lighten($color-gray, 15%);
+			}
+
+			&:focus,
+			&:hover {
+				border-color: rgba($color-light, 0.15);
+				border-bottom-color: $color-light;
+
+				&::placeholder {
+					color: $color-light;
+				}
+			}
+		}
+		&__submit {
+			display: block;
+			height: 60px;
+			width: 100%;
+			background-color: $color-gray;
+			font-size: 1.125rem;
+			border: 3px solid rgba($color-light, 0);
+			color: $color-light;
+			border-bottom-color: rgba($color-light, 0.5);
+
+			&:hover {
+				cursor: pointer;
+
+				border-color: $color-light;
+				background-color: $color-accent;
+			}
+		}
+	}
+}
