@@ -1,40 +1,40 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-    overflow-y: scroll;
-    color: $color-gray;
-    font-family: $font-main;
-    font-size: $font-size;
-    letter-spacing: 0.1em;
+	overflow-y: scroll;
+	color: $color-gray;
+	font-family: $font-main;
+	font-size: $font-size;
+	letter-spacing: 0.1em;
 }
 
 h1 {
-    font-family: $font-header;
-    font-weight: 300;
-    line-height: 1.2em;
-    /* TODO: адаптив */
-    font-size: 3.75rem;
+	font-family: $font-header;
+	font-weight: 300;
+	line-height: 1.2em;
+	/* TODO: адаптив */
+	font-size: 3.75rem;
 }
 
 a {
-    text-decoration: none;
-    color: $color-light;
+	text-decoration: none;
+	color: $color-light;
 }
 
 .btn {
-    display: block;
-    height: 60px;
-    padding: 18px $gap;
-    text-align: center;
-    font-size: 1.125rem;
-    transition: background-color 0.5s;
-    min-width: 250px;
-    border: 2px solid $color-light;
-    background-color: rgba($color-light, 0.1);
+	display: block;
+	height: 60px;
+	padding: 18px $gap;
+	text-align: center;
+	font-size: 1.125rem;
+	transition: background-color 0.5s;
+	min-width: 250px;
+	border: 2px solid $color-light;
+	background-color: rgba($color-light, 0.1);
 }
 
 .btn:hover {
-    background-color: $color-accent;
+	background-color: $color-accent;
 }

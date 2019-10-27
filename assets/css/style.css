@@ -816,6 +816,32 @@ a {
   color: #d66926;
 }
 
+.skills-button {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.skills-button__view {
+  height: 60px;
+  margin-top: 15px;
+  padding: 18px 20px;
+  font-size: 1.125rem;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  max-width: 250px;
+  border: 1px solid #44596e;
+  background-color: #2d3651;
+}
+
+.skills-button__view:hover {
+  background-color: #d66926;
+}
+
 @media (min-width: 768px) {
   .header-navbar__hamburger {
     display: none;

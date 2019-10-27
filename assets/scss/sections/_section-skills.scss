@@ -95,3 +95,24 @@
 		}
 	}
 }
+
+.skills-button {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.skills-button__view {
+	height: 60px;
+	margin-top: 15px;
+	padding: 18px $gap;
+	font-size: 1.125rem;
+	transition: background-color 0.5s;
+	max-width: 250px;
+	border: 1px solid $color-gray-dark;
+	background-color: $color-main;
+}
+
+.skills-button__view:hover {
+	background-color: $color-accent;
+}
