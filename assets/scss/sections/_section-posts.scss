@@ -1,0 +1,158 @@
+.section-posts {
+	&__container {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		h2 {
+			@include lg-min {
+				padding-left: $gap * 5;
+			}
+			@include lg-md {
+				padding-left: $gap * 4;
+			}
+			@include md-sm {
+				padding-left: $gap * 3;
+			}
+		}
+	}
+
+	&__grid {
+		padding-bottom: $gap;
+		grid-gap: 10px;
+		display: grid;
+		@include lg-min {
+			padding: 0 $gap * 5;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas:
+				"a1 a1 a2 a3"
+				"a4 a5 a6 a6";
+		}
+		@include lg-md {
+			padding: 0 $gap * 4;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"a1 a1 a2"
+				"a3 a4 a4"
+				"a5 a5 a6";
+		}
+		@include md-sm {
+			padding: 0 $gap * 3;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas:
+				"a1 a2"
+				"a3 a4"
+				"a5 a6";
+		}
+		@include sm {
+			padding: 0 $gap;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"a1"
+				"a2"
+				"a3"
+				"a4"
+				"a5"
+				"a6";
+		}
+	}
+}
+.post-item {
+	background-color: $color-gray-light;
+	transition: background-color 0.5s;
+
+	background-color: lighten($color-gray-light, 5%);
+
+	&:hover {
+		background-color: darken($color-gray-light, 5%);
+		h3 {
+			color: $color-main;
+		}
+
+		p {
+			color: $color-main;
+		}
+	}
+
+	&__image {
+		display: grid;
+
+		justify-content: center;
+		align-content: center;
+		img {
+			width: 100%;
+
+			object-fit: cover;
+		}
+	}
+	&__caption {
+		color: $color-gray;
+		padding: $gap;
+		display: grid;
+		align-content: center;
+		h3 {
+			transition: color 0.5s;
+			text-align: center;
+			font-family: $font-header;
+		}
+
+		p {
+			transition: color 0.5s;
+			text-align: center;
+		}
+	}
+	&:nth-of-type(1) {
+		grid-area: a1;
+	}
+
+	&:nth-of-type(2) {
+		grid-area: a2;
+	}
+
+	&:nth-of-type(3) {
+		grid-area: a3;
+	}
+
+	&:nth-of-type(4) {
+		grid-area: a4;
+	}
+
+	&:nth-of-type(5) {
+		grid-area: a5;
+	}
+
+	&:nth-of-type(6) {
+		grid-area: a6;
+	}
+}
+
+.posts__button {
+	display: grid;
+	justify-content: center;
+}
+
+.btn-view {
+	text-align: center;
+	display: block;
+	// height: 47px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: $gap;
+	font-size: 1.125rem;
+	letter-spacing: 0.12em;
+	transition: background-color 0.5s;
+	// width: 280px;
+	border: 2px solid $color-gray-dark;
+	background-color: $color-main;
+	@include sm-min {
+		height: 60px;
+		width: 100%;
+	}
+
+	@include sm {
+		min-width: 505px;
+	}
+}
+
+.btn-view:hover {
+	background-color: $color-accent;
+}
