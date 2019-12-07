@@ -1,0 +1,86 @@
+    .header-content {
+        &__container {
+            display: grid;
+            @extend %container;
+        }
+        position: relative;
+        &__title {
+            margin: 0 0 53px;
+            letter-spacing: 0.08em;
+            text-align: center;
+            @include lg-min {
+                margin: 0 0 53px;
+            }
+            @include lg {
+                margin: 0 0 43px;
+            }
+        }
+        &__buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            @include sm {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                letter-spacing: 0.1em;
+                display: block;
+                height: 60px;
+                padding: 18px $gap;
+                text-align: center;
+                font-size: 1.125rem;
+                transition: background-color 0.5s;
+                min-width: 250px;
+                border: 2px solid $color-light;
+                background-color: rgba($color-light, 0.1);
+                @include xl-min {
+                    &:not(:last-of-type) {
+                        margin-right: $gap;
+                    }
+                }
+                @include lg-min {
+                    min-width: 250px;
+                    &:not(:last-of-type) {
+                        margin-right: $gap;
+                    }
+                }
+                @include lg-md {
+                    min-width: 185px;
+                    height: 50px;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    letter-spacing: 0.1em;
+                    font-size: 1rem;
+                    &:not(:last-of-type) {
+                        margin-right: $gap;
+                    }
+                }
+                @include md-sm {
+                    min-width: 155px;
+                    height: 40px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    letter-spacing: 0.05em;
+                    font-size: 1rem;
+                    &:not(:last-of-type) {
+                        margin-right: $gap;
+                    }
+                }
+                @include sm {
+                    min-width: 155px;
+                    height: 40px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    letter-spacing: 0.05em;
+                    font-size: 1rem;
+                    &:not(:last-of-type) {
+                        margin-bottom: $gap;
+                    }
+                }
+            }
+            .btn:hover {
+                background-color: $color-accent;
+            }
+        }
+    }
